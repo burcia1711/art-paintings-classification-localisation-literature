@@ -28,10 +28,24 @@ A common approach is to fine-tune powerful object detectors (e.g. Faster R-CNN o
 
 Open-vocabulary and multi-modal models are a very recent development: models like GLIP (Grounded Language-Image Pre-training) integrate language descriptions into detection. GLIP was shown to generalise surprisingly well to art without task-specific training – for example, in one study, it correctly identified all depictions of a bull in Picasso’s progressively abstract “Le Taureau” lithograph series, whereas a 2015-era CNN detected only the most realistic instances. This suggests large-scale vision-language pretraining (as in CLIP/GLIP) can significantly improve cross-style object recognition, likely by learning more robust shape and context cues rather than texture alone [[5]](https://github.com/burcia1711/art-paintings-classification-localisation-literature/blob/main/2024%20-%20Algorithmic%20Ways%20of%20Seeing-%20Using%20Object%20Detection%20to%20Facilitate%20Art%20Exploration.pdf).
 
+### Domain Adaptation and Style Transfer
+
+Another line of research explicitly tackles the style gap through domain adaptation. Style transfer augmentation has proven effective: Kadish et al. (2021) generated a synthetic training set by applying AdaIN style transfers to 61,360 COCO images, re-stylising them to look like paintings [[2]](https://github.com/burcia1711/art-paintings-classification-localisation-literature/blob/main/2022%20-%20DEArt%20Dataset%20of%20European%20Art.pdf). By fine-tuning Faster R-CNN on these stylised images (without using any real paintings in training), they achieved a “significant improvement on the state of the art” for detecting people in art. Essentially, this approach injects painterly textures while preserving content, teaching the model to focus on shape and ignore texture cues [[6]](https://github.com/burcia1711/art-paintings-classification-localisation-literature/blob/main/2021%20-%20Improving%20Object%20Detection%20in%20Art%20Images%20Using%20Only%20Style%20Transfer.pdf). Other works have explored adversarial domain adaptation: for example, Bekkouch et al. (2021) used a GAN-based feature alignment to recognise medieval musical instruments across drawings and photos [[7]](https://github.com/burcia1711/art-paintings-classification-localisation-literature/blob/main/2023%20-%20A%20comprehensive%20survey%20on%20object%20detection%20in%20Visual%20Art%3A%20taxonomy%20and%20challenge.pdf). Such approaches try to make the model’s internal representations invariant to whether an image is a photo or a painting, often by adding a domain classifier loss or using generated artworks for training. These adaptation techniques address the observation that standard CNNs are overly biased to texture; by forcing a focus on shape/content, they mitigate errors on highly stylised inputs.
+
 ## References
-- [[1] Detecting People in Artwork with CNNs](https://github.com/burcia1711/art-paintings-classification-localisation-literature/blob/main/2016%20-%20Detecting%20People%20in%20Artwork%20with%20CNNs.pdf).
-- [[2] DEArt: Dataset of European Art](https://github.com/burcia1711/art-paintings-classification-localisation-literature/blob/main/2022%20-%20DEArt%20Dataset%20of%20European%20Art.pdf)
-- [[3] Weakly Supervised Object Detection in Artworks](https://github.com/burcia1711/art-paintings-classification-localisation-literature/blob/main/2018%20-%20Weakly%20Supervised%20Object%20Detection%20in%20Artworks.pdf)
-- [[4] Artistic Image Classification: An Analysis on the PRINTART Database](https://github.com/burcia1711/art-paintings-classification-localisation-literature/blob/main/2012%20-%20Artistic%20Image%20Classification%20An%20Analysis%20on%20the%20PRINTART%20Database.pdf)
-- [[5] Algorithmic Ways of Seeing: Using Object Detection to Facilitate Art Exploration](https://github.com/burcia1711/art-paintings-classification-localisation-literature/blob/main/2024%20-%20Algorithmic%20Ways%20of%20Seeing-%20Using%20Object%20Detection%20to%20Facilitate%20Art%20Exploration.pdf)
+[[1] Detecting People in Artwork with CNNs](https://github.com/burcia1711/art-paintings-classification-localisation-literature/blob/main/2016%20-%20Detecting%20People%20in%20Artwork%20with%20CNNs.pdf)
+
+[[2] DEArt: Dataset of European Art](https://github.com/burcia1711/art-paintings-classification-localisation-literature/blob/main/2022%20-%20DEArt%20Dataset%20of%20European%20Art.pdf)
+
+[[3] Weakly Supervised Object Detection in Artworks](https://github.com/burcia1711/art-paintings-classification-localisation-literature/blob/main/2018%20-%20Weakly%20Supervised%20Object%20Detection%20in%20Artworks.pdf)
+
+[[4] Artistic Image Classification: An Analysis on the PRINTART Database](https://github.com/burcia1711/art-paintings-classification-localisation-literature/blob/main/2012%20-%20Artistic%20Image%20Classification%20An%20Analysis%20on%20the%20PRINTART%20Database.pdf)
+
+[[5] Algorithmic Ways of Seeing: Using Object Detection to Facilitate Art Exploration](https://github.com/burcia1711/art-paintings-classification-localisation-literature/blob/main/2024%20-%20Algorithmic%20Ways%20of%20Seeing-%20Using%20Object%20Detection%20to%20Facilitate%20Art%20Exploration.pdf)
+
+[[6] Improving Object Detection in Art Images Using
+Only Style Transfer](https://github.com/burcia1711/art-paintings-classification-localisation-literature/blob/main/2021%20-%20Improving%20Object%20Detection%20in%20Art%20Images%20Using%20Only%20Style%20Transfer.pdf)
+
+[[7] A comprehensive survey on object detection in Visual Art:
+taxonomy and challenge](https://github.com/burcia1711/art-paintings-classification-localisation-literature/blob/main/2023%20-%20A%20comprehensive%20survey%20on%20object%20detection%20in%20Visual%20Art%3A%20taxonomy%20and%20challenge.pdf)
    
