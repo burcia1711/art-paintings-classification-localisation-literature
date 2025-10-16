@@ -42,6 +42,13 @@ Some studies have focused on particular art styles or subjects to understand sty
 
 Handling varied scales and details is another consideration: classical paintings can be very large, with tiny but important objects (small faces in a crowd, distant animals, etc.). Techniques like Slicing Aided Hyper Inference (SAHI) have been applied to art images to improve the detection of small objects by analysing image patches at high resolution [[9]](https://github.com/burcia1711/art-paintings-classification-localisation-literature/blob/main/2018%20-%20Deep%20learning%20for%20object%20detection%20in%20fine-art%20paintings.pdf). Multi-scale training and test-time augmentations are commonly used to ensure objects of different sizes and styles can be caught. Overall, while general-purpose detectors form the backbone, fine-grained adaptations are often needed to handle the diversity across art genres – from the realistic shading of Baroque paintings to the flat colours of Pop Art or the fragmented forms of Cubism.
 
+## Practical Applications in Art and Cultural Heritage
+
+Robust object classification and localisation in paintings unlock many applications in the art world:
+
+### Art Collection Indexing and Search: 
+Museums and galleries digitising their collections can use object detectors to automatically tag artworks with their depicted content (people, animals, objects). This enables powerful content-based search, so curators or researchers can retrieve all works containing a certain object or theme (e.g. “find all paintings depicting a lute”) without manual cataloging [[5]](https://github.com/burcia1711/art-paintings-classification-localisation-literature/blob/main/2024%20-%20Algorithmic%20Ways%20of%20Seeing-%20Using%20Object%20Detection%20to%20Facilitate%20Art%20Exploration.pdf). For example, an experimental system called “Algorithmic Ways of Seeing” lets users browse a digital museum collection by clicking on detected objects in one painting to see similar objects across other paintings. This facilitates novel explorations of art across time periods and styles, helping users discover artworks and details they might otherwise overlook.
+
 ## References
 [[1] Detecting People in Artwork with CNNs](https://github.com/burcia1711/art-paintings-classification-localisation-literature/blob/main/2016%20-%20Detecting%20People%20in%20Artwork%20with%20CNNs.pdf)
 
